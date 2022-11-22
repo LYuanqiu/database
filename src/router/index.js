@@ -67,6 +67,13 @@ export default new Router({
             component: (resolve) => require(['../components/customer/customer_personal'], resolve)
         },
         {
+            path: '/customerOrder2',
+            meta: {
+                title: '我的订单2'
+            },
+            component: (resolve) => require(['../components/customer/orderTry'], resolve)
+        },
+        {
             path: '*',
             redirect: '/login/login',
             //component: (resolve) => require(['../components/customer/login'], resolve)

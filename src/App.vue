@@ -75,8 +75,7 @@ export default {
     drawer: null,
     links:[{ text: '首页', icon: 'mdi-inbox-arrow-down',route:"/customerHome"},
           { text: '个人中心', icon: 'mdi-send',route:"/customerPerson"},
-          { text: '销售数据', icon: 'mdi-delete',route:"/saledata"},
-          { text: '店铺信息', icon: 'mdi-alert-octagon',route:"/information"},],
+          { text: '历史订单', icon: 'mdi-alert-octagon',route:"/customerOrder2"},],
   }),
 };
 </script>

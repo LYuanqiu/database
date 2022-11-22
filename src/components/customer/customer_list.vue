@@ -1,5 +1,14 @@
 <template>
   <div v-show="list.length">
+    <!--搜索框-->
+    <div class="container" id="div1">
+      <div class="search bar1">
+        <form>
+          <input type="text" v-model="inputText" placeholder="请输入您要搜索的内容...">
+          <button type="submit" @click="Click()"> <img src="../../assets/search.png" width="20px" height="20px"> </button>
+        </form>
+      </div>
+    </div>
     <div class="list-control">
       <div class="list-control-filter">
         <span>品牌:</span>
@@ -41,7 +50,62 @@
     </div>
     <div class="product-not-found"
          v-show="!filteredAndOrderedList.length">暂无相关商品</div>
+    <!--猜你喜欢-->
+    <!--转换成 v-for--后端实现 todo -->
+    <div class="like">
+      <h4 class="kt">猜你喜欢</h4>
+      <ul class="like-list">
+        <li class="likeItem">
+          <div class="p-img">
+            <img src="./images/itemlike01.png" />
+          </div>
+          <div class="attr">
+            <em>DELL戴尔Ins 15MR-7528SS 15英寸 银色 笔记本</em>
+          </div>
+          <div class="price">
+            <em>¥</em>
+            <i>3699.00</i>
+          </div>
+          <div class="commit">已有6人评价</div>
+        </li>
+        <li class="likeItem">
+          <div class="p-img">
+            <img src="./images/itemlike02.png" />
+          </div>
+          <div class="attr">Apple苹果iPhone 6s/6s Plus 16G 64G 128G</div>
+          <div class="price">
+            <em>¥</em>
+            <i>4388.00</i>
+          </div>
+          <div class="commit">已有700人评价</div>
+        </li>
+        <li class="likeItem">
+          <div class="p-img">
+            <img src="./images/itemlike03.png" />
+          </div>
+          <div class="attr">DELL戴尔Ins 15MR-7528SS 15英寸 银色 笔记本</div>
+          <div class="price">
+            <em>¥</em>
+            <i>4088.00</i>
+          </div>
+          <div class="commit">已有700人评价</div>
+        </li>
+        <li class="likeItem">
+          <div class="p-img">
+            <img src="./images/itemlike04.png" />
+          </div>
+          <div class="attr">DELL戴尔Ins 15MR-7528SS 15英寸 银色 笔记本</div>
+          <div class="price">
+            <em>¥</em>
+            <i>4088.00</i>
+          </div>
+          <div class="commit">已有700人评价</div>
+        </li>
+      </ul>
+    </div>
   </div>
+
+
 </template>
 
 <script>
@@ -150,6 +214,35 @@ export default {
 .list-control-filter{
   margin-bottom: 16px;
 }
+.container {
+
+  width: 500px;
+
+  margin: 50px auto;
+
+  overflow: hidden;
+
+  border: 1px solid #ccc;
+
+}
+.bar1 {background: #A3D0C3; }
+.bar1 input {
+  border: 2px solid #7BA7AB;
+  border-radius: 5px;
+  background: #F9F0DA;
+  color: #9E9C9C;
+}
+.bar1 button {
+  top: 0;
+  right: 0;
+  background: #7BA7AB;
+  border-radius: 0 5px 5px 0;
+}
+.bar1 button:before {
+  font-family: FontAwesome,serif;
+  font-size: 16px;
+  color: #F9F0DA;
+}
 .list-control-filter-item,
 .list-control-order-item {
   cursor: pointer;
@@ -168,5 +261,17 @@ export default {
 .product-not-found{
   text-align: center;
   padding: 32px;
+}
+.like {
+  width: 1000px;
+
+  margin: 50px auto;
+
+  overflow: hidden;
+
+  border: 1px solid #ccc;
+}
+.likeItem {
+  display:inline-block; width:200px; height:200px;
 }
 </style>
